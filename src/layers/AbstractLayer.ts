@@ -34,13 +34,13 @@ export class AbstractLayer {
     for (let i1 = 0; i1 < this.size; ++i1) {
       const weights = []
       for (let i2 = 0; i2 < previousLayer.size; ++i2) {
-        weights.push(Math.random() - 1)
+        weights.push(Math.random() - 0.5)
       }
       this.weights.push(weights)
     }
     // biases
     for (let i = 0; i < this.size; ++i) {
-      this.bias.push(Math.random() - 1)
+      this.bias.push(Math.random() - 0.5)
       this.activation.push(0)
     }
   }
