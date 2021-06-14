@@ -7,17 +7,17 @@ describe("neural.js tests", () => {
     expect(neural).toBeTruthy()
   })
 
-  test("Network.train(): XOR network", () => {
+  test("Network.train(): XOR", () => {
     const data = [
       {input: [0, 0], output: [0]},
       {input: [0, 1], output: [1]},
-      {input: [1, 0], output: [1]},
       {input: [1, 1], output: [0]},
+      {input: [1, 0], output: [1]},
     ]
 
     const net = new neural.Network({
-      learningRate: 0.04,
-      iterations: 10000,
+      learningRate: 0.02,
+      iterations: 3000,
       hiddenLayers: [4, 4]
     })
     net.train(data)
