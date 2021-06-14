@@ -1,0 +1,43 @@
+{
+  "name": "neural.js",
+  "version": "0.0.2",
+  "description": "A javascript library for neural networks",
+  "main": "build/neural.js",
+  "types": "build/neural.d.ts",
+  "files": [
+    "build",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "npm run build && jest",
+    "build": "rm -r ./build && npm run build:webpack",
+    "build:webpack": "webpack",
+    "build:tsc": "tsc --project tsconfig.json",
+    "postbuild": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir ./build --skipLibCheck"
+  },
+  "keywords": [
+    "neural",
+    "networks",
+    "data",
+    "science",
+    "machine",
+    "learning"
+  ],
+  "author": "Oliver Mulari",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olivermulari/neural.js.git"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
