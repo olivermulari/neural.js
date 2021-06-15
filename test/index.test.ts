@@ -38,7 +38,8 @@ describe("neural.js tests", () => {
     })
     net.train(data)
 
-    data.forEach((d) => {
+    const test_data = new Array(10).fill(0).map((n) => Math.random()).map((n: number) => ({ input: [n], output: [Math.sin(n)] }))
+    test_data.forEach((d) => {
       const error = Math.abs(d.output[0] - net.run(d.input)[0])
       expect(error).toBeLessThan(0.1)
     })
